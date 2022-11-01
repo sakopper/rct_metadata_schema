@@ -1,0 +1,345 @@
+ \scriptsize
+  \begin{tabular}{p{0.2\linewidth}p{0.10\linewidth}p{0.45\linewidth}}
+    \multicolumn{3}{l}{\textbf{\textsc{Table Legend}}} \\
+    \hline\hline
+    Structure & \multicolumn{2}{l}{The table is divided by a bold line between the four columns that form the} \\
+    & \multicolumn{2}{l}{``official'' schema that will be included in an XML file and the two columns} \\
+    & \multicolumn{2}{l}{that are included to provide context}  \\
+    \textbf{Bolded text} & \multicolumn{2}{l}{Denotes a new section or question block (not intended to be fillable} \\
+                         & \multicolumn{2}{l}{fields). No encoding scheme or cardinality indicated.} \\
+    Encoding scheme      & CV   & Controlled vocabulary (refer to table 2) \\
+    Cardinality          & 0..1 & Optional and non-repeatable \\
+                         & 0..n & Optional and repeatable \\
+                         & 1..1 & Mandatory and non-repeatable \\
+                         & 1..n & Mandatory and repeatable \\
+    Field origins        & WB & World Bank/IHSN \\
+                         & DDI & Data Documentation Initiative \\
+                         & AEA TR & AEA RCT Registry \\
+                         & CT & ClinicalTrials.gov \\
+                         & New & New field \\
+    Note on field origins & \multicolumn{2}{l}{The ``origins'' column denotes the original location of the field; however, we have} \\ & \multicolumn{2}{l}{modified the wording (but not substance) of many definitions for clarity in the} \\ & \multicolumn{2}{l}{context of social science RCTs.} \\
+    \hline\hline
+     \end{tabular}
+
+\begin{landscape}
+\hskip-1.0cm
+\begin{tabular}{|p{0.15\linewidth}|p{0.4\linewidth}|p{0.08\linewidth}|p{0.07\linewidth}?p{0.05\linewidth}|p{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{The Metadata Schema}}}\\
+
+\multicolumn{6}{l}{\textbf{\textsc{I. Basic Information}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline
+
+1.  Title & The name of the study & Free text & 1..1 & WB & \\
+\hline
+\multicolumn{4}{|l?}{\textbf{2. Authors/owners:} The person(s), corporate body, or agency responsible for the substantive and intellectual content of the data.} && \\ 
+\multicolumn{4}{|l?}{\hspace{0.15cm} This list may differ from the authors named on an associated paper or grant.} & & \\
+\hline
+\hspace{0.2cm} 2a. Authors/owners: Name & Use ``surname, first name'' format. & Free text & 1..n & WB &  \\
+ \hline
+\hspace{0.2cm} 2b. Authors/owners: Affiliation & Author's affiliated institution at the time of data creation. Can be the same as above if the owner is an agency. & Free text & 1..n & WB & \\
+\hline
+3. Abstract & A summary describing the purpose, nature, and scope of the RCT and data collection, special characteristics of its contents, and major subject areas covered. If relevant, please feel free to insert the paper abstract and add any additional information relevant for the data not included elsewhere. Please note that information on available accompanying material can be provided in the \emph{Data} section and the \emph{External Resources} sections. & Free text & 0..1 & WB/DDI & \\
+\hline
+\thead{4. Topic classification} & The broad substantive topic(s) covered by the data. & CV A & 1..n  & WB/DDI & Checkboxes to select all that apply.  \\
+\hline
+\thead{5. DDI document ID \\ \hspace{0.25cm}  number} & The ID number of a DDI document is a unique number that is used to identify this DDI file. & Numeric& N/A & WB & Automatically generated.  \\
+\hline 
+6. DDI document version & Version statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other material; other material for study. A version statement may also be included for a data file, a variable, or an nCube. & Numeric & N/A & DDI & Automatically generated.  \\
+\hline
+    \end{tabular}
+
+    
+    
+    \newpage
+    
+\hskip-1.0cm
+\begin{tabular}{|p{0.15\linewidth}|p{0.4\linewidth}|p{0.08\linewidth}|p{0.07\linewidth}?p{0.05\linewidth}|p{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{II. Study Sample}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline
+7. Country of intervention & The country or countries in which the intervention was implemented. Please repeat the element for each country, even if the study did not cover the entire country. & CV & 1..n & WB & Use ISO country codes. \\
+\hline
+8. Geographical coverage & The geographic level at which the data is representative, conditional on the inclusion/exclusion criteria below. Includes the total geographic scope of the data and, if needed, additional geographic selection criteria. Entries may be country or state names, along with qualifiers such as ``urban areas only'', etc. Note that a study can for example have national coverage even when some districts are not included in the sample, as long as all districts were eligible for sampling as part of the sampling strategy. & Free text & 0..1 & WB & \\
+\hline
+9. Intervention start & The date when the administration of the intervention (after random assignment) began. This refers to all interventions. If the study involved multiple interventions or e.g. several cohorts with different start dates, please enter the earliest start date of all interventions. If the exact day in the month is unknown, it is sufficient to fill in the month and year. & ISO Format: YYYY-MM & 1..1 & AEA TR & \\
+\hline
+10. Intervention end & The date when the administration of the intervention ended. This refers to all interventions. If the study involved several interventions or e.g. several cohorts with different end dates, please enter the end date of the intervention which ended last. If the exact day in the month is unknown, it is sufficient to fill in the month and year. & ISO Format: YYYY-MM & 1..1 & AEA TR & \\
+ \hline
+
+\thead{12. Inclusion/exclusion \\\hspace{0.38cm} criteria} & The criteria to determine eligibility for inclusion in the study and randomized assignment. In general, it should be possible to tell from the description of the inclusion/exclusion criteria whether a given individual or unit (hypothetical or real) is a member of the population that is the object of the research and from which the sample was drawn. In some cases the chosen sample from this population is only representative after applying sampling weights; this is indicated by the yes/no sampling weight field for each dataset below. Any additional information about the criteria used in the construction of sampling weights should be included here (see also ``Study sampling method'' below). & Free text & 1..1 & DDI & \\
+ \hline
+ \end{tabular}
+ 
+\newpage 
+ \hskip-1.0cm 
+ \begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth}|P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+  \multicolumn{6}{l}{\textbf{\textsc{II. Study Sample (continued)}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline
+\multicolumn{6}{|l|}{\textbf{Study sampling method:} The sampling method used to select the units to be included in the randomized experiment.} \\
+ \hline
+\thead{13. Study sampling \\ \hspace{0.25cm} method: Type} & The type of sampling method. If sampling is performed in several stages, please repeat this element for each stage. & CV C & 1..1 & WB/New attribute & \\
+\hline
+\thead{14. Study sampling \\ \hspace{0.25cm} method: Description} & An overall description of the sampling procedure; if the sampling was performed in several stages, consider listing them out with an explanation. Include a description of the method used to obtain the targeted number of randomization and observation units (e.g., power calculations), along with any information related to the sampling method that is relevant to users comparing targeted and actual units of randomization and units of observation. & Free text & 0..1 & WB/New attribute & \\
+\hline
+
+
+\multicolumn{4}{|l?}{\textbf{15. Sample size - Unit of randomization:} number of units that have been randomly assigned to different arms (often also referred to as } && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm} clusters), in integer format. May be the same as the sample size for \emph{Unit of observation.} In case of a clustered design this is the number of} && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm}  clusters pooled across all waves and treatment arms.} && \\
+\hline
+\hspace{0.2cm} 15a. Randomization unit & The level of treatment assignment: individuals, locations, facilities, groups, etc. Also referred to as the level of clustering. The level of treatment assignment may be equal to the unit of observation. & CV D & 1..n & Inspired by WB &  \\
+ \hline
+\thead{\hspace{0.2cm} 15b. Sample size - Unit \\ \hspace{0.25cm} of randomization: Targe- \\ \hspace{0.25cm} ted} & The targeted number of randomization units pooled over all units and waves. & Numeric & 1..n & WB &  \\
+\hline
+\thead{\hspace{0.2cm} 15c. Sample size - Unit \\ \hspace{0.25cm} of randomization: Actual} & The actual number of randomization units pooled over all arms and waves. Count only randomization units for which at least one outcome of one observation unit was measured post intervention. & Numeric & 1..n & WB &  \\ 
+\hline
+\end{tabular}
+\newpage
+
+
+ \hskip-1.0cm 
+ \begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{II. Study Sample (continued)}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+
+\hline
+
+\multicolumn{4}{|l?}{\textbf{16. Sample size - Unit of observation:} The sample size for the unit of observation at the study level (in integer format). This means the } && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm}  pooled sample size across all arms and, as applicable, clusters and waves. Count all units for which an outcome was measured at least once } && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm}  across all post-intervention data collection cycles.} && \\
+\hline
+\hspace{0.2cm} 16a. Unit of observation & The basic unit(s) of analysis or observation that the study describes: individuals, families/households, groups, physical locations, events such as court cases, facilities, institutions/organizations, administrative units, etc.
+& CV D & 1..n & WB & Checkboxes to select all that apply. \\
+\hline
+\thead{\hspace{0.2cm} 16b. Sample size - Unit \\ \hspace{0.25cm}  of observation: Targeted} & The targeted number of observation units pooled over all treatment arms and waves. & Numeric & 1..n & WB & \\
+ \hline
+\thead{\hspace{0.2cm} 16c. Sample size - Unit \\ \hspace{0.25cm} of observation: Actual} & The actual number of observation units pooled over all treatment arms and waves. Count all units for which an outcome was measured at least once across all post-intervention data collection cycles. & Numeric & 1..n & WB & \\
+\hline 
+\thead{17. The study was designed \\ \hspace{0.38cm} to analyze} & Please select all of the following that your project was designed to measure or analyze. & CV B & 0..n & New & Checkboxes to select all that apply. \\
+ \hline
+\end{tabular} 
+
+\vspace{3 em}
+
+ \hskip-1.0cm 
+ \begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{III. Study Design}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline
+\multicolumn{4}{|l?}{\textbf{24. Outcomes:} Measurements used to determine the effect of an intervention/treatment/program on participants or experimental units.} && \\
+\multicolumn{4}{|l?}{\hspace{0.2cm} Please repeat the information for each main outcome measure.} && \\
+ \hline 
+\thead{\hspace{0.2cm} 24a. Outcomes: Name/ \\\hspace{0.25cm} title} & A brief descriptive name to refer to the outcome measure. & Free text & 1..n & CT & Assigned a number by the system for easy reference. \\
+ \hline
+\thead{\hspace{0.2cm} 24b. Outcomes: Cate- \\\hspace{0.25cm} gory} & The broad category of the specific outcome measure. & CV A & 1..n & New & \\
+ \hline
+\thead{\hspace{0.2cm} 24c. Outcomes: Desc-\\\hspace{0.25cm} ription} & Additional information about the outcome measure, such as importance to the analysis (e.g., primary vs. secondary outcome), unit of measurement (e.g. meters), format/data type (e.g. categorical), distribution class (for numeric outcomes, e.g. count, binary, real numbers), range of possible values (e.g. 0-100), as well as a description of how the outcome was constructed (if relevant).  & Free text & 0..n & CT &  \\
+ \hline
+\thead{\hspace{0.2cm} 24d. Outcomes: Col- \\\hspace{0.25cm}lected pre-treatment?} & Was this outcome measured before any treatment or notification of treatment took place (``at baseline'')? & Yes / No & 0..n & New & Radio buttons to select one response. \\
+ \hline
+
+\multicolumn{6}{|l|}{\textbf{Interventional Study Design}} \\
+ \hline
+
+\multicolumn{6}{|l|}{\textbf{Arms:} An arm is defined as a subgroup of participants in a randomized trial that receives none, one, or several specific interventions, according to the trial's protocol. }\\
+\hline
+17. Number of arms & The number of arms in the randomized trial. For a trial with multiple periods or phases of random assignment that have different numbers of arms, the maximum number of arms from all periods or phases. & Numeric & 1..1 & CT & \\
+\hline
+\thead{\hspace{0.2cm} 17a. Arm: Name}  & A short name used to identify the arm. & Free Text & 0..n & CT & Each arm should be assigned a number by the system for easy reference. \\
+\hline 
+\thead{\hspace{0.2cm} 17b.  Arm: Number of \\ \hspace{0.25cm} randomization units \\ \hspace{0.25cm} (Targeted)} & The targeted number of randomization units. & Numeric & 1..n & Inspired by the WB & \\
+\hline
+\thead{\hspace{0.2cm} 17c. Arm: Number of \\\hspace{0.25cm}  randomization units \\\hspace{0.25cm} (Actual)} & The actual number of units, i.e., the number of randomization units for which at least one outcome was measured. & Numeric & 1..n & Inspired by the WB &  \\
+  \hline
+\end{tabular}
+
+ \hskip-1.0cm 
+ \begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{III. Study Design (continued)}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline 
+
+\multicolumn{4}{|l?}{\textbf{18. Interventions:} An intervention is defined as a process or action that is the focus of an RCT or experiment. The intervention be a } && \\
+\multicolumn{4}{|l?}{\hspace{0.2cm}  policy change (such as the right to buy an amount of subsidized rice), an experimental condition (such as a high or low cost of} && \\
+\multicolumn{4}{|l?}{\hspace{0.2cm}    contributing to a public good in a lab experiment), an encouragement, nudge, or information treatment (such as letters advertising a } && \\
+\multicolumn{4}{|l?}{\hspace{0.2cm}   loan product), etc. Different variants of a process or action are a distinct intervention if they are randomly assigned. Receiving no} && \\
+\multicolumn{4}{|l?}{\hspace{0.2cm}    treatment is not an intervention.} && \\
+  \hline
+\hspace{0.2cm} 18a. Intervention: Name & A brief descriptive name used to refer to the intervention. & Free text & 1..n & CT & Each intervention should be assigned a number by the system for easy reference. \\
+\hline
+\hspace{0.2cm} 18b. Intervention: Type & The general type of intervention. Please select ``other'' if none of the multiple choice options is a good fit and enter a free text type.  & CV E & 1..n & CT &  \\
+\hline
+\thead{\hspace{0.2cm} 18c. Intervention: \\ \hspace{0.25cm} Description} & Free text description of the details of the intervention.  & Free text & 0..n & CT & \\
+\hline
+\thead{19. Intervention assign- \\ \hspace{0.38cm} ment strategy} & The strategy for assigning interventions to the units of randomization in a trial. & CV F & 1..1 & CT &  \\
+\hline
+\thead{20. Assignment strategy \\ \hspace{0.38cm} description} & A description of the intervention assignment strategy. Stratification variables (if any) can be listed under the \emph{covariates} section. Any other information about the treatment assignment should be provided here. & Free Text & 0..1 & CT & \\
+\hline 
+\thead{21. Arm or group / inter- \\ \hspace{0.25cm}ventional cross-reference \\\hspace{0.25cm} (to indicate how interven- \\\hspace{0.25cm} tions relate to treatment \\\hspace{0.25cm}  arms)} & Indicate which interventions are provided in each arm of the study, using the cross-reference check boxes. & Checkboxes & 1..1 & CT & Checkboxes using the intervention numbers generated in 20b. \\
+\hline
+
+\end{tabular}
+
+
+\newpage
+ \hskip-1.0cm 
+ \begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{III. Study Design (continued)}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline 
+27. Stratified randomization & If the treatment assignment was carried out using stratified randomization, please explain here how the strata were formed. If possible, name the stratification variables. Write N/A if no stratification took place. & Free text & 0..1 & WB &  \\
+ \hline
+
+\multicolumn{6}{|l|}{\textbf{Covariates}} \\
+ \hline
+ 28. Covariates: Individual & Please select all individual-level covariate categories included in this study. & CV I  & 0..n & New & Checkboxes to select all that apply. \\
+ \hline
+ 28. Covariates: Group & Please select all group-level covariate categories included in this study. & CV J & 0..n & New & Checkboxes to select all that apply. \\
+ \hline
+
+
+ \thead{22. Does a measure  \\\hspace{0.25cm}  of treatment   \\\hspace{0.25cm} receipt exist?} & Does the data contain a measure of take-up or treatment receipt? If yes, please expand under \emph{Compliance}. Choose ``not relevant'' if treatment receipt is automatic upon assignment. & Yes / No / Not Relevant & 1..1 & New & Radio buttons to select one response. \\
+\hline
+23. Compliance description & Please describe whether noncompliance with any of the interventions is possible and, if available, how it is measured and what the take-up rates are. Noncompliance occurs when not all units take up or receive the assigned intervention, or when at least some units receive an intervention they were not assigned. An example is ``one-sided imperfect compliance,'' where arms that were not assigned the intervention are prevented from receiving it, but some units in the treated arm(s) do not take up the intervention. & Free text & 1..1 & New & \\
+ \hline
+ \end{tabular}
+ 
+\vspace{3 em}
+
+\hskip-1.0cm 
+\begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{IV. Data}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline 
+\multicolumn{4}{|l?}{\textbf{29. Data:} Information about the datasets included in this study and the methodology employed in data collection. Datasets are distinct} &&\\
+\multicolumn{4}{|l?}{
+ from data files. A separate data set should contain information central to the analysis, and (i) consist of observational units from a distinct} &&\\ 
+\multicolumn{4}{|l?}{  study population or (ii) come from an independent data source or mode of data collection. Please repeat the following elements for each} &&\\
+\multicolumn{4}{|l?}{
+  dataset.} &&\\
+\hline
+\hspace{0.2cm} 29a. Dataset name & A descriptive name for the dataset. & Free text & 1..n & WB & Assigned a number by the system for easy reference. \\
+\hline
+\hspace{0.2cm} 29b. Kind of data & Types of data included. Please select all categories that apply. & CV G & 1..n & WB &  \\
+\hline 
+\thead{\hspace{0.2cm} 29c. Dataset: Unit of \\\hspace{0.2cm} observation/analysis} & The basic unit(s) of analysis or observation that the dataset describes: individuals, groups, entities, physical locations, etc. Optional if the unit of observation is the same as the unit of observation for the study. & CV D & 0..n & WB &  \\
+\hline 
+\thead{\hspace{0.2cm} 29d. Dataset: Are there  \\\hspace{0.2cm} sampling weights?} & The sampling procedures used may make it necessary to apply weights to produce accurate statistical results. Are sampling weights included in this dataset? & Yes / No & 0..n & WB & Radio buttons to select one response. \\
+\hline
+\end{tabular}
+\newpage 
+
+
+\hskip-1.0cm 
+\begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{IV. Data (continued)}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline 
+\multicolumn{4}{|l?}{\textbf{29e. Dataset: Arms:} Please repeat this information for each treatment arm of this study.} && \\
+\hline 
+\thead{\hspace{0.2cm} 29ei. Dataset: Arm: \\\hspace{0.2cm}Name} & Short name used to identify the arm & Free text & 1..n & CT & Should be the same name as in the study design. \\
+\hline
+\thead{\hspace{0.2cm} 29eii. Arms: Number of \\\hspace{0.2cm} observational units: \\\hspace{0.2cm} Targeted} & The targeted number of observational units in this arm. & Numeric & 1..n & AEA TR &  \\
+ \hline 
+\thead{\hspace{0.2cm} 29eiii. Arms: Number of \\\hspace{0.2cm} observational units: \\\hspace{0.2cm} Actual} & The actual number of observational units in this arm. Count all units for which an outcome was measured at least once across all post-intervention data collection cycles. & Numeric & 1..n & AEA TR &  \\
+\hline
+\multicolumn{6}{|l|}{\textbf{Data Collection}}  \\
+\hline
+\thead{30. Mode of data collec- \\ \hspace{0.2cm} tion} & The manner in which the interview was conducted or information was gathered. & CV K & 0..n & WB & Checkboxes to select all that apply. \\
+\hline
+31. Time method & The time method or time dimension of the dataset. & CV H & 0..n & WB & Checkboxes to select all that apply.  \\
+\hline
+\thead{32. Follow up to a previous \\\hspace{0.2cm} study?} & Is this dataset part of a follow up to a previous study? & Yes / No & 0..n & New & Radio buttons to select one response. \\
+\hline
+\multicolumn{4}{|l?}{\textbf{33. Time period covered:} The time period covered by the data. This is most often the start and end date of data collection (for example)} && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm} in most survey datasets); however, retrospective surveys or administrative data may cover a different time period. If the data contains } && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm} several waves or rounds, please identify the wave in the ``Cycle Description'' below and enter the start and end date of each cycle separately.} && \\
+\hline
+\thead{\hspace{0.2cm} 33a. Time period cov- \\\hspace{0.2cm} ered: Start} & Start date of the time period covered in this data collection cycle. If the exact start date is unavailable, please use first of month, quarter, or year and add a caveat in the description below. & ISO Format: YYYY-MM-DD & 1..n & WB &  \\
+\hline
+\end{tabular}
+\newpage
+
+\hskip-1.0cm 
+\begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{IV. Data (continued)}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline 
+\thead{\hspace{0.2cm} 33b. Time period cov- \\\hspace{0.2cm} ered: End} & End date of the time period covered in this data collection cycle. If the exact start date is unavailable, please use first day of the month, quarter, or year and add a caveat in the Cycle description below. & ISO Format: YYYY-MM-DD & 1..n & WB & \\
+\hline
+\thead{\hspace{0.2cm} 33c. Time period cov- \\\hspace{0.2cm} ered: Cycle description} & Brief description of the data collection cycle. Include information such as whether the time period is pre-treatment, during treatment, or post-treatment and whether the data set contains a sub-sample of the study population. & Free text & 1..n & WB &  \\
+\hline
+\multicolumn{4}{|l?}{\textbf{34. Dates of data collection:} Only needs to be filled if the time period covered by the data is different from the time period of data collection,  } && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm} for example in retrospective surveys or administrative data. If the data contains several waves or rounds, please identify the wave in the } && \\
+\multicolumn{4}{|l?}{\hspace{0.15cm} ``Cycle description'' field and enter the start and end date of each wave separately. Leave empty if dates of data collection are unknown} &&  \\
+\multicolumn{4}{|l?}{\hspace{0.15cm}  or if they are the same as time period covered.} &&  \\
+\hline
+\thead{\hspace{0.2cm} 34a. Dates of data collec- \\\hspace{0.2cm} tion: Start} & Start date of the data collection, if different from the start date of the time period covered in the data set. This could be the case for retrospective surveys or administrative data. & ISO Format: YYYY-MM-DD & 0..n & WB &  \\
+\hline
+\thead{\hspace{0.2cm} 34b. Dates of data collec- \\\hspace{0.2cm} tion: End} & End date of the data collection, if different from the end date of the time period covered in the data set. This could be the case for retrospective surveys administrative data. & ISO Format: YYYY-MM-DD & 0..n & WB & \\
+\hline 
+\thead{\hspace{0.2cm} 34c. Dates of data collec- \\\hspace{0.2cm} tion: Cycle description} & Additional information on the wave, including whether it is a full or sub-sample wave and whether the data collection happened pre-treatment, during treatment, or post-treatment. If the exact start and end dates are unknown or cannot be published, please provide a range of dates as tight as possible which describes the dates of data collection instead of filling in the exact dates in the ``Start'' and ``End'' attributes. & Free text & 0..n & WB &  \\
+\hline
+\thead{35. Notes on data collec- \\\hspace{0.25cm} tion} & Any noteworthy aspects of data collection. Includes information on factors such as duration of interviews, protocol on and number of call-backs, etc. & Free text & 0..1 & WB & \\
+\hline
+\end{tabular}
+
+\vspace{3 em}
+
+\hskip-1.0cm 
+\begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{V. External resources}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline 
+\multicolumn{4}{|l?}{\textbf{36. Resources:} Information on any related materials. Include at least one resource, such as the best description of the \emph{data} (e.g. in an } && \\
+\multicolumn{4}{|l?}{\hspace{0.2cm}  academic paper) or a database. Other resources include trial registry entries, related datasets with different content and/or access } && \\
+\multicolumn{4}{|l?}{\hspace{0.2cm}  conditions, publications, codebooks, questionnaires, pre-analysis plans, etc.} && \\
+\hline
+\thead{\hspace{0.2cm} 36a. External resource: \\\hspace{0.25cm} Type} & Please select one. & CV L & 1..n & WB & \\
+\hline
+\thead{\hspace{0.2cm} 36b. External resource: \\\hspace{0.25cm} Description} & A brief description or name of the resource. & Free text & 0..n & WB & \\
+\hline
+\thead{\hspace{0.2cm} 36c. External resource: \\\hspace{0.25cm} Citation} & Complete bibliographic reference containing all of the elements of a citation that can be used to cite the work following a standard format such as APA, MLA, Chicago, etc. & Free text & 0..n & WB &\\
+\hline
+\thead{\hspace{0.2cm} 36d. External resource: \\\hspace{0.25cm} Link (DOI/URL)} & The DOI or, if DOI is not available, URL of the resource. Leave blank if neither is available. & Free text & 1..n & WB & \\
+\hline
+\thead{\hspace{0.2cm} 36e. External resource: \\\hspace{0.25cm} Access policy} & Is access to the data restricted in any way? If so, provide a description of the restrictions the process for accessing the data. & Yes / No and free text & 0..n & New & Yes / No as radio buttons to select one response. \\
+\hline
+ \end{tabular} 
+ 
+%\vspace{2 em}
+
+
+\hskip-1.0cm 
+\begin{tabular}{|P{0.15 \linewidth}|P{0.4\linewidth} |P{0.08\linewidth}|P{0.07\linewidth}?P{0.05\linewidth}|P{0.16\linewidth}|}
+\multicolumn{6}{l}{\textbf{\textsc{VI. Oversight/Quality control}}}\\
+\hline
+\textbf{Field} & \textbf{Description} & \textbf{Encoding Scheme} & \textbf{Cardinality} & \textbf{Origin} & \textbf{Programming Notes} \\
+\hline 
+37. IRB number & IRB protocol number or case reference. & Free text & 0..1 & AEA TR & \\
+\hline
+38. Authorizing agency & Name of the agency that authorized the project. & Free text & 0..1 & WB & \\
+\hline 
+\thead{39. Pre-specified in a \\\hspace{0.25cm} trial registry?} & Has the randomized experiment been pre-registered in a trial registry? & Yes / No & 0..1 & New & Radio buttons to select one response. \\
+\hline
+\thead{40. Funding agency/ \\\hspace{0.25cm} sponsor} & The source(s) of funds for production of the work. Please list all organizations (local, national, or international) that have materially contributed, in cash or in kind, to the data collection or compilation.  & Free text & 0..1 & WB & \\
+\hline
+41. Implementation partner & Please list any other parties or persons that have played a significant role in implementing the study or collecting the data. Please name individuals' affiliations and roles in their organization. & Free text & 0..1 & WB & \\
+ \hline
+ \end{tabular}
+\end{landscape}
+
+\normalsize
