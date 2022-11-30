@@ -2,10 +2,8 @@
 
 This repository contains supplementary material for the paper "A Metadata Schema for Data from Experiments in the Social Sciences," by Jack Cavanagh, Jasmin Fliegner, Sarah Kopper, and Anja Sautmann.
 
-## Top folder structure:
+## Contents:
 
-- **01_Metadata_schema**: contains files and information relevant to the Metadata schema presented in the paper.
+- **Appendix_A_B**: contains the PDF of appendices A and B of "A Metadata Schema for Data from Experiments in the Social Sciences." These two appendices contain the full metadata schema, and the working list of controlled vocabularies, respectively.
+- **Appendix_C**: contains the PDF of appendix C of the same paper. This appendix contains further resources used in the construction of the schema and CVs, including a list of public datasets used to test both. 
 
-- **02_Controlled_vocabularies**: contains files and information relevant to the controlled vocabularies selected/developed for the metadata schema. 
-
-Each of the folders above contains its own readme for further information on its contents and purpose.
