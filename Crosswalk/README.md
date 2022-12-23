@@ -2,7 +2,7 @@
 
 ## Version 0.9.0
 
-*Note: The current version is 0.9.0 because it is a preliminary and tentative mapping, without recent feedback from stakeholders of the other schematas we map to. We will continue to version up as we receive that feedback and make any edits.*
+*Note: The current version is 0.9.0 because it is a preliminary and tentative mapping, without recent feedback from stakeholders of the other schemata we map to. We will continue to version up as we receive that feedback and make any edits.*
 
 ## Content:
 
