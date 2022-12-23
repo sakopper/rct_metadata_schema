@@ -1,4 +1,4 @@
-# RCT Metadata schema crosswalk
+# RCT Metadata Schema crosswalk
 
 ## Version 0.9.0
 
@@ -10,9 +10,9 @@ This folder currently consists of "Crosswalk_RCT_Metadata.xlsx." Its purpose is 
 
 It currently contains mappings to the following schematas:
 
-- The World Bank Microdata Catalog (API and guide for data archivists)
+- The World Bank Microdata Catalog ([API](https://microdata.worldbank.org/api-documentation/catalog/index.html#operation/singleDataset) and [Guide for data archivists](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi9taa8sI78AhVlD1kFHfXUD8cQFnoECAkQAQ&url=https%3A%2F%2Fguide-for-data-archivists.readthedocs.io%2F_%2Fdownloads%2Fen%2Flatest%2Fpdf%2F&usg=AOvVaw1KSEigq-AQDdHk86uP1qi-))
 - Dataverse (The citation, geographic, and social science/humanities metadata blocks)
-- Clinicaltrials.org
+- [Clinicaltrials.org](https://clinicaltrials.gov/api/gui/ref/crosswalks)
 - YARD/ISPS
 - AEA Trial Registry
 - DDI Codebook 2.5
@@ -27,7 +27,7 @@ The crosswalk currently has 8 groups of columns:
 - **L-N**: Mapping to the Dataverse. The structure of this and each of the following groups of columns follows the above.
 - **O-R**: Mapping to clinicaltrials.org
 - **S-U**: Mapping to YARD/ISPS
-- **V-x**: Mapping to the AEA Trial Registry
+- **V-X**: Mapping to the AEA Trial Registry
 - **Y-AB**: Mapping to DDI Codebook 2.5. Column AA contains notes from a DDI expert that were obtained earlier in the schema creation process.
 
 ### Types of mapping:
