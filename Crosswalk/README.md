@@ -15,7 +15,7 @@ It currently contains mappings to the following schematas:
 - [Clinicaltrials.org](https://clinicaltrials.gov/api/gui/ref/crosswalks)
 - [YARD/ISPS](https://isps.yale.edu/research/data)
 - [AEA Trial Registry](https://www.socialscienceregistry.org/)
-- DDI Codebook 2.5
+- [DDI Codebook 2.5](https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/field_level_documentation_files/schemas/codebook_xsd/schema-overview.html)
 
 ### Columns:
 
