@@ -11,10 +11,10 @@ This folder currently consists of "Crosswalk_RCT_Metadata.xlsx." Its purpose is 
 It currently contains mappings to the following schematas:
 
 - The World Bank Microdata Catalog ([API](https://microdata.worldbank.org/api-documentation/catalog/index.html#operation/singleDataset) and [Guide for data archivists](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi9taa8sI78AhVlD1kFHfXUD8cQFnoECAkQAQ&url=https%3A%2F%2Fguide-for-data-archivists.readthedocs.io%2F_%2Fdownloads%2Fen%2Flatest%2Fpdf%2F&usg=AOvVaw1KSEigq-AQDdHk86uP1qi-))
-- Dataverse (The citation, geographic, and social science/humanities metadata blocks)
+- [Dataverse](https://dataverse.harvard.edu/) (The citation, geographic, and social science/humanities metadata blocks)
 - [Clinicaltrials.org](https://clinicaltrials.gov/api/gui/ref/crosswalks)
-- YARD/ISPS
-- AEA Trial Registry
+- [YARD/ISPS](https://isps.yale.edu/research/data)
+- [AEA Trial Registry](https://www.socialscienceregistry.org/)
 - DDI Codebook 2.5
 
 ### Columns:
