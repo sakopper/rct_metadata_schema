@@ -1,4 +1,4 @@
-# The RCT Metadata Schema (repository: rct_metadata_schema)
+# The RCT Metadata Schema
 
 This repository contains additional information and resources on a proposed RCT Metadata Schema for Data from Experiments in the Social Sciences.
 
