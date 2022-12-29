@@ -2,7 +2,7 @@
 
 ## Version 0.9.0
 
-*Note: The current version is 0.9.0 because it is a preliminary and tentative mapping, without recent feedback from stakeholders of the other schemata we map to. We will continue to version up as we receive that feedback and make any edits.*
+*Note: The current version is 0.9.0 because it is a preliminary mapping and has not yet received feedback from stakeholders of the other schemata we map to. We will continue to version up as we receive that feedback and make any edits.*
 
 ## Content:
 
@@ -21,8 +21,8 @@ It currently contains mappings to the following schematas:
 
 The crosswalk currently has 8 groups of columns:
 
-- **A-D**: Contain a copy of the metadata schema as presented in Appendices A and B in this repository.
-- **E-G**: Contain information on the development of the field, including whether it is a new creation, and if not, the schema we drew the definition from, the original definition, and any changes we mafe to the field.
+- **A-D**: Contain a copy of the metadata schema (see Appendix A of the RCT Metadata Schema working paper for version 1.0 of the schema).
+- **E-G**: Contain information on the development of the field, including the schema we drew the definition from, the original definition, and any changes made; or whether it is a new field.
 - **H-K**: Information on mapping to the World Bank Microdata Catalog. The first two columns are the placement of symmetric fields in the API and guide for data archivists, respectively, the third is for notes, and the last is a description of the mapping.
 - **L-N**: Mapping to the Dataverse. The structure of this and each of the following groups of columns follows the above.
 - **O-R**: Mapping to clinicaltrials.org
